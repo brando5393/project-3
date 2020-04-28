@@ -20,4 +20,12 @@ module.exports = ((router) =>{
     router.patch("/posts:id", (req, res) =>{
         // update votes for specific post
     });
+    
+    router.push("/authenticate", (req, res) =>{
+        // route for adding new users
+    });
+
+    router.get("/authenticate", (req, res) =>{
+        // route to authenticate existing users
+    });
 });
