@@ -1,6 +1,6 @@
 const router = express.router();
 const path = require('path');
-const db = mongoose.connection;
+const db = require('../models/index.js');
 
 module.exports = ((router) =>{
     router.get("/", (req, res) => res.sendFile(path.join(__dirname, "../client/public/index.html")));
