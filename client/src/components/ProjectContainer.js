@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import NavTabs from "./NavTabs";
-import Home from "./pages/Home";
-import Categories from "./pages/Categories";
+import NavBar from "./NavBar";
+import Home from "../pages/Home";
+import Categories from "../pages/Categories";
 
 
 class ProjectContainer extends Component {
@@ -16,10 +16,17 @@ class ProjectContainer extends Component {
   renderPage = () => {
     if (this.state.currentPage === "Home") {
       return <Home />;
-    } else (this.state.currentPage === "Categories") {
+    } else if(this.state.currentPage === "Categories") 
+    {
       return <Categories />;
  
+    } else (this.state.currentPage === "Create-Post")
+    {
+
+      return <Create-Post />;
+
     }
+
   };
 
   render() {

@@ -1,6 +1,6 @@
 import React from "react";
 
-function NavTabs(props) {
+function NavBar(props) {
   return (
     <ul className="nav nav-tabs">
       <li className="nav-item">
@@ -14,33 +14,28 @@ function NavTabs(props) {
       </li>
       <li className="nav-item">
         <a
-          href="#about"
-          onClick={() => props.handlePageChange("About")}
-          className={props.currentPage === "About" ? "nav-link active" : "nav-link"}
+          href="#categories"
+          onClick={() => props.handlePageChange("Categories")}
+          className={props.currentPage === "Categories" ? "nav-link active" : "nav-link"}
         >
-          About
+          Categories
         </a>
       </li>
       <li className="nav-item">
         <a
-          href="#blog"
-          onClick={() => props.handlePageChange("Blog")}
-          className={props.currentPage === "Blog" ? "nav-link active" : "nav-link"}
+          href="#create-post"
+          onClick={() => props.handlePageChange("Create-post")}
+          className={props.currentPage === "Create-Post" ? "nav-link active" : "nav-link"}
         >
-          Blog
+          Create Post
         </a>
       </li>
-      <li className="nav-item">
-        <a
-          href="#contact"
-          onClick={() => props.handlePageChange("Contact")}
-          className={props.currentPage === "Contact" ? "nav-link active" : "nav-link"}
-        >
-          Contact
-        </a>
-      </li>
+     
+          
+        
+      
     </ul>
   );
 }
 
-export default NavTabs;
+export default NavBar;
