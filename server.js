@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.static('./client/public'));
 
 
-//require("./controllers.js")(router);
+require("./controllers.js")(router);
 
 mongoose.connect(MONGODB_URI);
 
