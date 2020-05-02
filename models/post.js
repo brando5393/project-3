@@ -11,6 +11,10 @@ const PostSchema = new Schema({
         type: String,
         required: true
     },
+    Catagory: {
+        type: String,
+        required: true
+    },
     Body: {
         type: String, 
         required: true
