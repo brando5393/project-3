@@ -30,7 +30,15 @@ function NavBar(props) {
           Create Post
         </a>
       </li>
-     
+      <li className="nav-item">
+        <a
+          href="#Sign-In"
+          onClick={() => props.handlePageChange("Sign-In")}
+          className={props.currentPage === "Sign-In" ? "nav-link active" : "nav-link"}
+        >
+          Sign In
+        </a>
+      </li>
           
         
       
