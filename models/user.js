@@ -15,10 +15,10 @@ const UserSchema = new Schema({
     email: {
         type: String, 
         required: true
-    },
-    post: {
-        Posts: [PostSchema]
-    } 
+    }
+    // post: {
+    //     Posts: [PostSchema]
+    // }
 });
 
 
