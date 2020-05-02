@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar";
 import Home from "../pages/Home";
-import Categories from "../pages/Categories";
+import Footer from "./Footer";
 
 
 class ProjectContainer extends Component {
@@ -9,11 +9,14 @@ class ProjectContainer extends Component {
   render() {
     return (
       <div>
-        <NavTabs
-          currentPage={this.state.currentPage}
-          handlePageChange={this.handlePageChange}
-        />
-        {this.renderPage()}
+       <NavBar />
+       <div className = "container">
+        <Home />
+        {/* Content condisionaly renders here */}
+       </div>
+       <div>
+         <Footer />
+       </div>
       </div>
     );
   }
