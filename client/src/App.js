@@ -1,24 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import AuthForm from '../src/components/AuthForm';
+import Card from '../src/components/Card';
+import Comment from '../src/components/Comments';
+import CreateForm from '../src/components/CreateForm';
+import Footer from '../src/components/Footer';
+import NavBar from '../src/components/NavBar';
+import PostList from '../src/components/PostList';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavBar />
+      <AuthForm />
+      <Footer />
+      
     </div>
   );
 }

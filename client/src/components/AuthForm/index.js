@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Form extends Component {
+class AuthForm extends Component {
   // Setting the initial values of this.state.username and this.state.password
   state = {
     username: "",
@@ -58,3 +58,4 @@ class Form extends Component {
     );
   }
 }
+export default AuthForm;
