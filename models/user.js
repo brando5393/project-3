@@ -18,7 +18,7 @@ const UserSchema = new Schema({
     }
     // post: {
     //     Posts: [PostSchema]
-    // }
+    // } 
 });
 
 
