@@ -3,7 +3,7 @@
     
     function Card(props) {
       return (
-        <div className="card">
+        <div className="category-card">
           <div className="container">
             <img alt={props.name} src={props.image} />
           </div>
