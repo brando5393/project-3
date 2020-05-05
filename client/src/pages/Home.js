@@ -1,22 +1,23 @@
 import React, { Component } from 'react'
-import content from "../jsonContent/homepage.json" 
+import category from "../jsonContent/homepage.json" 
 import Card from "../components/Card"
 
-export default class Home extends Component {
+class Home extends Component {
     state = {
-        content
+        content: category
     }
     render() {
         return (
-            <div>
+            <div className = "row">
                 {this.state.content.map(content => (
                     <Card
-                    img src = {content.image}
-                    card-title = {content.heading}
-                    card-text = {content.description}
+                    image = {content.image}
+                    heading = {content.heading}
+                    description = {content.description}
                     />
                 ))};
             </div>
         );
     };
 };
+export default Home;
