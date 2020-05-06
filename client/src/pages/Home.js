@@ -6,14 +6,23 @@ class Home extends Component {
     state = {
         content: category
     }
+
+    handleFormSubmit = e => {
+       console.log(e)
+        console.log("click")
+
+    }
+
+
     render() {
         return (
             <div className = "row">
-                {this.state.content.map(content => (
+                {this.state.content.map(item => (
                     <Card
-                    image = {content.image}
-                    heading = {content.heading}
-                    description = {content.description}
+                    image = {item.image}
+                    heading = {item.heading}
+                    description = {item.description}
+                    onForumClick = {this.handleFormSubmit}
                     />
                 ))};
             </div>
