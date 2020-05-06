@@ -1,5 +1,6 @@
   import React from "react";
   import content from "../../jsonContent/homepage.json"   
+  import "./style.css"
    
   
 
@@ -7,7 +8,7 @@
       return (
         
           <div className="col-lg-4">
-            <div className="card category-card" style={{width: "18rem"}}>
+            <div className="card category-card" style={{width: "20rem"}}>
               <img src= {props.image} className="card-img-top" alt= {props.title} />
               <div className="card-body">
               <h5 className="card-title">{props.heading}</h5>
@@ -16,6 +17,7 @@
               </div>
               </div>
             </div>
+        
           
         
       );

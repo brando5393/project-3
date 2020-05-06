@@ -1,0 +1,30 @@
+.card {
+    width: 150px;
+}
+.category-card {
+
+    width: 150px;
+
+}
+img.center {
+
+    display: block;
+    margin: 0 auto;
+}
+.card-body{
+
+    padding: 1rem;
+}
+
+.card-img-top {
+
+    width: 50%;
+    margin-top: 15%;
+    margin-right: 25%;
+    margin-bottom: 10%;
+    margin-left: 25%
+}
+.card-title {
+
+    text-align: center;
+}
