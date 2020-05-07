@@ -1,22 +1,26 @@
 import React, { Component } from "react";
-import NavBar from "./NavBar";
+import Forum from "../pages/Forum"
 import Home from "../pages/Home";
-import Footer from "./Footer";
+import CreatePost from "../components/CreatePost"
+import {Route, Link, Switch} from "react-router-dom";
 
 
 class ProjectContainer extends Component {
   
   render() {
     return (
-      <div>
-       <NavBar />
-       <div className = "container">
-        <Home />
-        {/* Content condisionaly renders here */}
-       </div>
-       <div>
-         <Footer />
-       </div>
+      <div className = "container">
+       <Switch>
+
+          <Route exact path= "/" component = {Home} />
+          <Route exact path= "/posts">
+          
+               <CreatePost />  
+               <Forum />
+          </Route>
+          <Route exact path="/api/posts"></Route>
+       </Switch>
+        
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 function NavBar(props) {
   return (
@@ -32,7 +33,7 @@ function NavBar(props) {
         </ul>
         <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-                <a className="nav-link" href="/form">Create Post</a>
+                <Link className="nav-link" to="/posts">Create Post</Link>
             </li>
         </ul>
     </div>

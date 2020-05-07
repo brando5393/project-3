@@ -1,12 +1,12 @@
 import React, {Component} from "react";
-// import Card from "../components/Card";
+// import CreatePost from "../components/CreatPost";
 //context with router, componentDidMount
 
 class Forum extends Component {
     //State 
     state = {
 
-        category: category
+        category: ""
     }
     //Page Specific Logic
     //takes value from importing context, componentDidMount where i do the api call
@@ -15,10 +15,12 @@ class Forum extends Component {
     render(){
         return(
             <div>
+              Forum Page
             </div>
         )
     }
 
 }
+export default Forum;
 
 
