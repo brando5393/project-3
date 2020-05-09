@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.static('./client/public'));
 app.use(routes);
 
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI,{useNewUrlParser: true});
 
 app.listen(PORT, (err) =>{
     if(err) throw err;

@@ -14,32 +14,49 @@
       super(props);
 
       this.state = {
-        postTitle: "",
-        author: "",
-        category: "",
-        postContent: ""
+        Title: "",
+        Author: "",
+        Category: "",
+        Body: ""
              };
             }
+      // When the component mounts, get a list of all available base breeds and update this.state.breed
+      // componentDidMount() {
+      //   // Simple POST request with a JSON body using fetch
+      //   const requestOptions = {
+      //       method: 'POST',
+      //       headers: { 'Content-Type': 'application/json' },
+      //       body: JSON.stringify({ title: 'React POST Request Example' })
+      //   };
+      //   fetch("api/posts", requestOptions)
+      //       .then(response => response.json())
+      //       .then(data => this.setState({ category: data.body}));
+      // }
   
       handleInputChange = event => {
-        // Getting the value and name of the input which triggered the change
-        const { name, value } = event.target;
-    
-        // Updating the input's state
+        
+        console.log(event.target.name, event.target.value);
+        const name = event.target.name;
         this.setState({
-          [name]: value
+          
+          [name]: event.target.value
+          
         });
-      }
+
+      };
     
       handleFormSubmit = event => {
+        console.log("submit happening");
         event.preventDefault();
         const data = event.target;
 
-        fetch("/api/posts",{
+        fetch("api/posts",{
           method: "POST",
-          body: data
-        })
-      
+          body: data,
+          }).then((res) => res.json(data)).catch(err =>{
+           if(err) throw err;
+        });
+        
       }
 
       render () {
@@ -47,19 +64,41 @@
           <div>
             <form onSubmit= {this.handleFormSubmit}>
               <div className="form-group">
-                <label for="post-title">Post Title:</label>
-                <input type="text" className="form-control" id="post-title" name="title" aria-describedby="titleHelp"></input>
+                <label htmlFor="post-title">Post Title:</label>
+                <input 
+                  type="text" 
+                  className="form-control" 
+                  id="post-title" 
+                  name="Title" 
+                  value={this.state.Title}
+                  onChange={this.handleInputChange}
+                  aria-describedby="titleHelp"
+                />
+
                 <small id="titleHelp" className="form-text text-muted">Give your post a title.</small>
               </div>
               <div className="form-group">
-                <label for="post-author">Author:</label>
-                <input type="text" className="form-control" id="post-author" name="UserId" aria-describedby="authorHelp"></input>
+                <label htmlFor="post-author">Author:</label>
+                <input
+                 type="text" 
+                 className="form-control" 
+                 id="Author" 
+                 name="Author" 
+                 value={this.state.Author}
+                 onChange={this.handleInputChange}
+                 aria-describedby="authorHelp"
+                 ></input>
                 <small id="authorHelp" className="form-text text-muted">Who is the author of this post?</small>
               </div> 
               <div className="form-group">
-                <label for="categorySelect">Select A Category:</label>
-                  <select className="form-control" id="categorySelect" name="category" aria-describedby="categoryHelp">
-                    <option value="" selected></option>
+                <label htmlFor="categorySelect">Select A Category:</label>
+                  <select 
+                  className="form-control" 
+                  id="categorySelect" 
+                  name="Category" 
+                  aria-describedby="categoryHelp"
+                  value={this.state.Category}
+                  onChange={this.handleInputChange} >
                     <option value="HTML">HTML</option>
                     <option value="CSS">CSS</option>
                     <option value="JavaScript">Javascript</option>
@@ -70,9 +109,16 @@
                 <small id="categoryHelp" className="form-text text-muted">Select an option so that your post can be placed into the correct category. </small>
               </div>
               <div className="form-group">
-                <label for="post-content">Post Content:</label>
+                <label htmlFor="post-content">Post Content:</label>
                 
-                <textarea id="post-content" name="body" cols="30" rows="10" aria-describedby="contentHelp"></textarea>
+                <textarea 
+                id="post-content" 
+                name="Body" 
+                cols="30" 
+                rows="10" 
+                aria-describedby="contentHelp"
+                value={this.state.Body}
+                onChange={this.handleInputChange} ></textarea>
                 <small id="contentHelp" className="form-text text-muted">Write your post here.</small>
               
               <button type = "submit" value = "submit"  className={`forum-btn btn btn-primary post-btn`}>Create Post</button>

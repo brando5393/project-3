@@ -13,12 +13,12 @@ class ProjectContainer extends Component {
        <Switch>
 
           <Route exact path= "/" component = {Home} />
-          <Route exact path= "/posts">
+          <Route exact path= "/posts" component = {CreatePost} />
           
-               <CreatePost />  
-               <Forum />
-          </Route>
-          <Route exact path="/api/posts"></Route>
+               
+              {/* //  <Forum /> */}
+            {/* </Route> */}
+          <Route exact path="/api/posts" component = {Forum} />
        </Switch>
         
       </div>
