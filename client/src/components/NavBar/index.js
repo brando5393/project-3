@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import "./style.css";
 
 function NavBar(props) {
   return (
@@ -30,10 +31,13 @@ function NavBar(props) {
             <li className="nav-item">
                 <a className="nav-link" href="/post">Databases</a>
             </li>
+            <li className="nav-item">
+                <Link className="nav-link" to ="/posts">Create Post</Link>
+            </li>
         </ul>
         <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-                <Link className="nav-link" to="/posts">Create Post</Link>
+                <Link className="nav-link" to="/posts">Sign In/Sign Up</Link>
             </li>
         </ul>
     </div>

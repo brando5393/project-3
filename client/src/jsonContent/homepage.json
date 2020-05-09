@@ -6,12 +6,12 @@
     },
     {
         "heading": "CSS",
-        "description": "Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web and is designed to enable the separation of presentation and content, including layout, colors, and fonts.",
+        "description": "Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document. CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts.",
         "image": "images/css.jpg"
     },
     {
         "heading": "JavaScript",
-        "description": "JavaScript enables interactive web pages and is an essential part of web applications. The vast majority of websites use it for client-side page behavior, and all major web browsers have a dedicated JavaScript engine to execute it.",
+        "description": "JavaScript enables interactive web pages and is an essential part of web applications. The vast majority of websites use it for client-side page behavior, and most browsers have a dedicated JavaScript engine to execute.",
         "image": "images/javascript.jpg"
     },
     {
@@ -21,12 +21,12 @@
     },
     {
         "heading": "React",
-        "description": "Thanks to Facebook, React was created as a Javascript Library. Users can make interactive UI's easily as well as develop new features while keeping your existing code.",
+        "description": "React was created as a Javascript Library and is now one of the most popular frameworks in web development.  Users can make interactive UI's easily as well as develop new features while keeping your existing code.",
         "image": "images/react.jpg"
     },
     {
         "heading": "Databases",
-        "description": "A database is an organized collection of data, generally stored and accessed electronically from a computer system.",
+        "description": "A database is an organized collection of data, generally stored and accessed electronically from a computer system. Database systems are an essential tool in our society and can be found in libraries, schools and websites",
         "image": "images/database.jpg"
     }
 ]
