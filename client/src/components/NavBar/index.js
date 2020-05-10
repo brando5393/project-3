@@ -32,7 +32,7 @@ function NavBar(props) {
                 <a className="nav-link" href="/post">Databases</a>
             </li>
             <li className="nav-item">
-                <Link className="nav-link" to ="/posts">Create Post</Link>
+                <Link className="nav-link" to ="/createposts">Create Post</Link>
             </li>
         </ul>
         <ul className="navbar-nav ml-auto">

@@ -4,8 +4,7 @@
     //once link element is selected in dropdown bring user to /posts/:category
     //create route for each category where you will render the create post and a conditional render of the forum page based on selected category
     //research conditional rendering react router dom dropdown
-  // <button type="submit" className="btn btn-success" id="create-btn">Create Post</button> */}
-//  <button onClick={()=>props.onForumClick(props.heading)}  className={`forum-btn btn btn-primary post-btn ${props}`} value={props.heading}>Create Post</button> */} */}
+
     
     class CreatePost extends Component {
 
@@ -20,22 +19,11 @@
         Body: ""
              };
             }
-      // When the component mounts, get a list of all available base breeds and update this.state.breed
-      // componentDidMount() {
-      //   // Simple POST request with a JSON body using fetch
-      //   const requestOptions = {
-      //       method: 'POST',
-      //       headers: { 'Content-Type': 'application/json' },
-      //       body: JSON.stringify({ title: 'React POST Request Example' })
-      //   };
-      //   fetch("api/posts", requestOptions)
-      //       .then(response => response.json())
-      //       .then(data => this.setState({ category: data.body}));
-      // }
+      
   
       handleInputChange = event => {
+        console.log(event.target.name, event.target.value)
         
-        console.log(event.target.name, event.target.value);
         const name = event.target.name;
         this.setState({
           
@@ -50,8 +38,8 @@
         event.preventDefault();
         const data = event.target;
 
-        fetch("api/posts",{
-          method: "POST",
+        fetch("/api/createposts" ,{
+          method: "PUT",
           body: data,
           }).then((res) => res.json(data)).catch(err =>{
            if(err) throw err;
