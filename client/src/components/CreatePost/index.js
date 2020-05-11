@@ -39,7 +39,7 @@
         const data = event.target;
 
         fetch("/api/createposts" ,{
-          method: "PUT",
+          method: "POST",
           body: data,
           }).then((res) => res.json(data)).catch(err =>{
            if(err) throw err;
