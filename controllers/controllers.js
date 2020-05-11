@@ -48,7 +48,7 @@ const models = require('../models');
 
 // Create Post
     
-    router.post("/api/createposts", (req, res) =>{
+    router.post("/api/posts", (req, res) =>{
         console.log(req.body);
         models.Post.create(req.body).then(function(savedPost){
             return savedPost;

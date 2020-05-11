@@ -3,15 +3,15 @@ import axios from "axios";
 
 
 class CreatePost extends Component {
-
- state = {
+ 
+  state = {
       Title: "",
       Author: "",
       Category: "",
       Body: ""
     };
-    
-          
+  
+  
 
     handleInputChange = event => {
       console.log(event.target.name, event.target.value)
@@ -31,7 +31,7 @@ class CreatePost extends Component {
     
       console.log(this.state)
 
-      axios.post("/api/createpost", this.state).then(data => {
+      axios.post("/api/posts", this.state).then(data => {
           console.log(data)
       })
      
@@ -101,7 +101,7 @@ class CreatePost extends Component {
             
             <button onClick={()=>this.handleFormSubmit.bind(this.state)}  className={`forum-btn btn btn-primary post-btn`}>Create Post</button>
             </div>
-         
+          
           </form>
         </div>
       )

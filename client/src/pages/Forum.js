@@ -5,61 +5,50 @@ import axios from "axios";
 class Forum extends Component {
     //State 
     state = {
-
-        category: ""
+      category: "",
+      posts: []
     }
 
-  componentDidMount() {
+  componentDidMount= () => {
+    this.getPost();
+    // axios.get('/api/posts' + this.state.category)
+    // .then(res => {
+    //   const category = res.data
+    //   this.setState({ posts: data });
+    // })
+    // .catch(err => this.setState({ error: err.message }));
+};
+  getPost = () => {
     axios.get('/api/posts' + this.state.category)
     .then(res => {
-      const category = res.data
-      this.setState({ category: category });
+      const data = res.data
+      this.setState({ posts: data });
     })
     .catch(err => this.setState({ error: err.message }));
-};
-
-//   render() {
-//     const {
-//        movies
-//     } = this.state;
-//     return (
-//       <div>
-//           <ul>
-//           { movies.map(movie => <li>{movie.name}</li>)}
-//           </ul>
-//       </div>
-//     )
-//   }
-// }
-    // handleFormSubmit = event => {
-    //     event.preventDefault();
-    //     axios.get('/api/posts/' + this.state.category)
-    //       .then(res => {
-    //         if (res.data.status === "error") {
-    //           throw new Error(res.data.message);
-    //         }
-    //         this.setState({ results: res.data.message, error: "" });
-    //       })
-    //       .catch(err => this.setState({ error: err.message }));
-    //   };
-    // "/api/posts/:category"
-
-    //Page Specific Logic
-    //takes value from importing context, componentDidMount where i do the api call
+  };
+  displayPost = (posts) => {
+      return posts.map((post, index) => (
+        <div key={index}>
+         <h3>{post.category}</h3>
+         </div>
+      
+      )
+      )
+  };
 
     //Rendering
-    render(){
-        const{category}= this.state;
+    //QUERY TO DATABASE GRAB DATA ATTRIBUTE VALUE THEN TAKE RESPONSE AND APPEND INTO A CARD POST TITLE, AND ID
+    render() {
+       
         return(
-            <div>
-                <ul>
-              {category.map(categories => <li>{categories.name}</li>)}
-                </ul>
-            </div>
-        )
-    }
+          <div className = "card">
+          {this.displayPost(this.state.posts)};
+          </div>
+          
+              )
+                }
+  }
 
-}
 export default Forum;
 
 
