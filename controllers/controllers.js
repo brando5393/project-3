@@ -87,7 +87,11 @@ initializePassport(passport, email => {
         };
     });
 
-    router.get("/login")
+    router.get("/login", passport.authenticate("local", {
+        successRedirect: "/",
+        failureRedirect: "/login", 
+        failureFlash: true
+    }))
 
 
 
