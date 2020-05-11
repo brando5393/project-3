@@ -4,7 +4,12 @@ const path = require('path');
 const mongoose = require('mongoose');
 const models = require('../models');
 const bcrypt = require('bcrypt');
-const passport = require('passport');
+const passport = require("passport");
+const initializePassport = require("./passportconfig.js");
+
+initializePassport(passport, email => {
+    return User.find(user => user.email === email)
+})
     router.get("/", (req, res) => res.sendFile(path.join(__dirname, "../client/public/index.html")));
 
     // pull all posts
@@ -81,6 +86,8 @@ const passport = require('passport');
             setInterval(res.redirect("/"), 5000)
         };
     });
+
+    router.get("/login")
 
 
 
