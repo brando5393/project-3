@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const models = require("../models");
 
 const initialize = (passport, getUserByEmail) =>{
-    const authenticateUser = (email, password, done) =>{
+    const authenticateUser = async (email, password, done) =>{
         const user = getUserByEmail(email)
         if(user == null){
             return done(null, false, {message: "No user on file with the provided e-mail."})
