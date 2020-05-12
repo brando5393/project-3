@@ -11,12 +11,6 @@ class Forum extends Component {
 
   componentDidMount= () => {
     this.getPost();
-    // axios.get('/api/posts' + this.state.category)
-    // .then(res => {
-    //   const category = res.data
-    //   this.setState({ posts: data });
-    // })
-    // .catch(err => this.setState({ error: err.message }));
             };
   getPost = () => {
     axios.get('/api/posts' + this.state.category)
