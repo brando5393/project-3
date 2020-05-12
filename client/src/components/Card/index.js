@@ -6,7 +6,7 @@
 
     function Card(props) {
       return (
-        
+          <div>
           <div className="col-lg-4">
             <div className="card category-card" >
               <img src= {props.image} className="card-img-top" alt= {props.title} />
@@ -19,12 +19,11 @@
               </div>
               </div>
             </div>
-        
+          </div>
         // style={{width: "20rem"}}
         
       );
     }
-    
-    
 
-export default Card;
+ 
+  export default Card;

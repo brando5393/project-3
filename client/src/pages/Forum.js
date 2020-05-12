@@ -3,11 +3,11 @@ import axios from "axios";
 //context with router, componentDidMount
 // const models = require('./models/index');
 class Forum extends Component {
-    //State 
+    //State, this.props.params.category
     state = {
       category: "",
       posts: []
-    }
+        }
 
   componentDidMount= () => {
     this.getPost();
@@ -17,7 +17,7 @@ class Forum extends Component {
     //   this.setState({ posts: data });
     // })
     // .catch(err => this.setState({ error: err.message }));
-};
+            };
   getPost = () => {
     axios.get('/api/posts' + this.state.category)
     .then(res => {
@@ -27,10 +27,12 @@ class Forum extends Component {
     .catch(err => this.setState({ error: err.message }));
   };
   displayPost = (posts) => {
+    console.log(posts)
       return posts.map((post, index) => (
+
         <div key={index}>
          <h3>{post.category}</h3>
-         </div>
+        </div>
       
       )
       )
@@ -42,13 +44,11 @@ class Forum extends Component {
        
         return(
           <div className = "card">
-          {this.displayPost(this.state.posts)};
+            {this.displayPost(this.state.posts)};
           </div>
-          
               )
-                }
-  }
-
+                };
+      };
 export default Forum;
 
 

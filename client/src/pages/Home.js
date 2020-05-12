@@ -19,7 +19,7 @@ class Home extends Component {
         console.log("click")
 
     }
-
+    //redirect how to pass the information, react route pass props /or redirect, routes with params//
 
     render() {
         return (
