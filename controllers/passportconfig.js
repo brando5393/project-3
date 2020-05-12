@@ -18,8 +18,10 @@ const initialize = (passport, getUserByEmail) =>{
         }
     }
     passport.use(new localStrategy({usernameField: "email"}), authenticateUser);
-    passport.serializeUser((user, done) =>{})
-    passport.deserializeUser((id, done) =>{})
+    // store logged in users id to the session
+    // find out why models is not showing up as valid
+    passport.serializeUser((user, done) => done(null,{models.User.find({_id})}));
+    passport.deserializeUser((id, done) =>{return done(null, getUserById(id))})
 };
 
 module.exports = initialize
