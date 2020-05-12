@@ -3,7 +3,12 @@ const router = require('express').Router();
 const path = require('path');
 const mongoose = require('mongoose');
 const models = require('../models');
-    router.get("/", (req, res) => res.sendFile(path.join(__dirname, "../client/public/index.html")));
+
+    
+
+// router.get("/", (req, res) => res.sendFile(path.join(__dirname, "../client/public/index.html")));
+
+
 
     // pull all posts
     router.get("/api/posts", (req, res) =>{
@@ -42,33 +47,20 @@ const models = require('../models');
     });
 
 // Create Post
-    // Get Post Catagory 
-    router.post("/api/posts/", (req, res) =>{
-        console.log(req.body);
-        models.Post.insert(req.body, (err, saved) =>{
-            if(err){
-                throw err;
-            }else{
-                // res.redirect(200, '/posts');
-                // res.send('Hello World');
-                res.json(saved);
-
-                // const postTemplate = {
-                //     title: this.title,
-                //     author: this.author,
-                //     category: this.category,
-                //     body: this.body
-                // }
-            }
-        });
-    });
-
-
-
     
-
+    router.post("/api/posts", (req, res) =>{
+        console.log(req.body);
+        models.Post.create(req.body).then(function(savedPost){
+            return savedPost;
+        }
+        ).catch(function(error){
+            res.json(error);
+        })
+    });
 
     router.get('*', (req, res) =>{
         res.sendFile(path.join(__dirname, "../client/public/index.html"));
     })
+
+
 module.exports = router;
