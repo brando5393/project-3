@@ -1,0 +1,48 @@
+.card {
+    width: 150px;
+}
+.category-card {
+
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+
+}
+img.center {
+
+    display: block;
+    margin: 0 auto;
+}
+.card-body{
+
+    padding: 1rem;
+}
+
+.card-img-top {
+
+    width: 50%;
+    margin-top: 15%;
+    margin-right: 25%;
+    margin-left: 25%;
+    height: 35%;
+    
+}
+.card-title {
+
+    text-align: center;
+}
+
+.card-text {
+
+    font-size: 13px;
+
+}
+.footer {
+    text-align: center;
+}
+.row {
+
+    margin-top: 30px;
+    margin-right: 4px;
+
+}

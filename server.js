@@ -24,7 +24,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI,{useNewUrlParser: true});
 
 app.listen(PORT, (err) =>{
     if(err) throw err;

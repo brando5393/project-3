@@ -30,3 +30,16 @@ body{
 .list-group-item {
   line-height: 2.5;
 }
+
+.footer {
+  text-align: center;
+}
+.card category-card {
+
+    width: 150px;
+
+}
+img.center {
+    display: block;
+    margin: 0 auto;
+}
