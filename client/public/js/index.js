@@ -23,7 +23,7 @@ $(document).ready(() =>{
   //   let postTitle = $("#post-title").val().trim();
   //   let postAuthor = $("#post-author").val().trim();
   //   let category = $("#category-select").val();
-  // })
+  // }
 
   $(".enter-btn").on("click", function(event){
     event.preventDefault();
