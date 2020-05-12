@@ -4,7 +4,7 @@ import ProjectContainer from "./components/ProjectContainer";
 import Navbar from "./components/NavBar"
 import Footer from "./components/Footer"
 
-const myContext=React.createContext(defaultValue) 
+
 
 
 
