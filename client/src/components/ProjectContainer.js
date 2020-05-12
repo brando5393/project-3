@@ -11,10 +11,9 @@ class ProjectContainer extends Component {
     return (
       <div className = "container">
        <Switch>
-
           <Route exact path= "/" component = {Home} />
           <Route exact path= "/createposts" component = {CreatePost} />
-          <Route exact path="/api/posts" component = {Forum} />
+          <Route exact path="/posts" component = {Forum} />
        </Switch>
         
       </div>

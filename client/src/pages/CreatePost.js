@@ -77,6 +77,7 @@ class CreatePost extends Component {
                 aria-describedby="categoryHelp"
                 value={this.state.Category}
                 onChange={this.handleInputChange} >
+                  <option value="" selected></option>
                   <option value="HTML">HTML</option>
                   <option value="CSS">CSS</option>
                   <option value="JavaScript">Javascript</option>

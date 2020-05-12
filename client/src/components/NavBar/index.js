@@ -14,22 +14,22 @@ function NavBar(props) {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-                <a className="nav-link" data-category= "HTML" href="/post">HTML</a>
+                <a className="nav-link" data-category= "HTML" href="/posts">HTML</a>
             </li>
             <li className="nav-item">
-                    <a className="nav-link" data-category= "CSS" href="/post">CSS</a>
+                    <a className="nav-link" data-category= "CSS" href="/posts">CSS</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" data-category= "Javascript" href="/post">JavaScript</a>
+                <a className="nav-link" data-category= "Javascript" href="/posts">JavaScript</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" data-category = "Node" href="/post">Node</a>
+                <a className="nav-link" data-category = "Node" href="/posts">Node</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" data-category = "React" href="/post">React</a>
+                <a className="nav-link" data-category = "React" href="/posts">React</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" data-category = "Databases" href="/post">Databases</a>
+                <a className="nav-link" data-category = "Databases" href="/posts">Databases</a>
             </li>
             <li className="nav-item">
                 <Link className="nav-link" to ="/createposts">Create Post</Link>
