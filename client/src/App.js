@@ -3,19 +3,22 @@ import React from "react";
 import ProjectContainer from "./components/ProjectContainer";
 import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
-import MyProvider from "./MyProvider";
-
-
+import AuthContextProvider from "./AuthContext"
+import {MyProvider} from "./MyContext";
 
 
 function App() {
   return(
       <div>
-         <MyProvider>
-        <Navbar />
-        <ProjectContainer />
-        <Footer />
-        </MyProvider>
+         
+           <AuthContextProvider>
+             <MyProvider>
+                <Navbar />
+                <ProjectContainer />
+                <Footer />
+                </MyProvider>
+          </AuthContextProvider>
+        
       </div>
   );
 }

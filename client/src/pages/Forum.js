@@ -1,5 +1,6 @@
-import React, {Component} from "react";
+import React, {Component, useContext} from "react";
 import axios from "axios";
+import {MyContext} from "../MyContext";
 //context with router, componentDidMount
 // const models = require('./models/index');
 class Forum extends Component {
@@ -7,7 +8,9 @@ class Forum extends Component {
     state = {
       category: "",
       posts: []
-        }
+        };
+
+  topic = useContext(MyContext)
 
   componentDidMount= () => {
     this.getPost();
@@ -31,11 +34,11 @@ class Forum extends Component {
       )
       )
   };
-
+    static contextType = MyContext
     //Rendering
     //QUERY TO DATABASE GRAB DATA ATTRIBUTE VALUE THEN TAKE RESPONSE AND APPEND INTO A CARD POST TITLE, AND ID
     render() {
-       
+        const {} = this.context
         return(
           <div className = "card">
             {this.displayPost(this.state.posts)};
