@@ -49,27 +49,16 @@ initializePassport(passport, email => {
     });
 
 // Create Post
-    // Get Post Catagory 
-    router.post("/api/posts/", (req, res) =>{
+    
+    router.post("/api/posts", (req, res) =>{
         console.log(req.body);
-        models.Post.insert(req.body, (err, saved) =>{
-            if(err){
-                throw err;
-            }else{
-                // res.redirect(200, '/posts');
-                // res.send('Hello World');
-                res.json(saved);
-
-                // const postTemplate = {
-                //     title: this.title,
-                //     author: this.author,
-                //     category: this.category,
-                //     body: this.body
-                // }
-            }
-        });
+        models.Post.create(req.body).then(function(savedPost){
+            return savedPost;
+        }
+        ).catch(function(error){
+            res.json(error);
+        })
     });
-
     router.post("/register", async (err, req, res) =>{
         try{
             const hashedPassword = await bcrypt.hash(req.body.password, 10);
@@ -92,13 +81,9 @@ initializePassport(passport, email => {
         failureRedirect: "/login", 
         failureFlash: true
     }))
-
-
-
-    
-
-
     router.get('*', (req, res) =>{
         res.sendFile(path.join(__dirname, "../client/public/index.html"));
     })
+
+
 module.exports = router;
