@@ -1,8 +1,9 @@
   import React from "react";
-  import content from "../../jsonContent/homepage.json"   
-  import "./style.css"
+  import content from "../../jsonContent/homepage.json";
+  import "./style.css";
+  import {Link} from "react-router-dom";
    
-  
+  // onClick={()=>props.onForumClick(props.heading)}
 
     function Card(props) {
       return (
@@ -14,7 +15,9 @@
               <h5 className="card-title">{props.heading}</h5>
               <p className="card-text">{props.description}</p>
               <div className="footer">
-              <button onClick={()=>props.onForumClick(props.heading)}  className={`forum-btn btn btn-primary enter-btn ${props}`} value={props.heading}>Enter Forum</button>
+              <Link to= {"/posts/" + props.heading}>
+              <button className={`forum-btn btn btn-primary enter-btn ${props}`} value={props.heading}>Enter Forum</button>
+              </Link>
               </div>
               </div>
               </div>

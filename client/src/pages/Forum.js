@@ -1,22 +1,23 @@
 import React, {Component, useContext} from "react";
 import axios from "axios";
-import {MyContext} from "../MyContext";
+// import {MyContext} from "../MyContext";
 //context with router, componentDidMount
 // const models = require('./models/index');
 class Forum extends Component {
     //State, this.props.params.category
     state = {
-      category: "",
+      category: this.props.match.params.category,
       posts: []
         };
 
-  topic = useContext(MyContext)
+  // topic = useContext(MyContext)
 
   componentDidMount= () => {
+     console.log(this.state.category)
     this.getPost();
             };
   getPost = () => {
-    axios.get('/api/posts' + this.state.category)
+    axios.get('/api/posts/' + this.state.category)
     .then(res => {
       const data = res.data
       this.setState({ posts: data });
@@ -34,7 +35,7 @@ class Forum extends Component {
       )
       )
   };
-    static contextType = MyContext
+    // static contextType = MyContext
     //Rendering
     //QUERY TO DATABASE GRAB DATA ATTRIBUTE VALUE THEN TAKE RESPONSE AND APPEND INTO A CARD POST TITLE, AND ID
     render() {

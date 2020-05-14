@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import {MyContext} from "../MyContext";
+// import {MyContext} from "../MyContext";
 
 
 class CreatePost extends Component {
@@ -39,7 +39,7 @@ class CreatePost extends Component {
       })
      
     }
-    static contextType = MyContext;
+    // static contextType = MyContext;
 
     render () {
       console.log(this.context)

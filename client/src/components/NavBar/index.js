@@ -14,7 +14,7 @@ function NavBar(props) {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-                <a className="nav-link" data-category= "HTML" href="/posts">HTML</a>
+                <a className="nav-link" data-category= "HTML" href="/posts/HTML">HTML</a>
             </li>
             <li className="nav-item">
                     <a className="nav-link" data-category= "CSS" href="/posts">CSS</a>
