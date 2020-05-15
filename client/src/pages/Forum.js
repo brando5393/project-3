@@ -1,5 +1,7 @@
 import React, {Component, useContext} from "react";
 import axios from "axios";
+import {Link} from "react-router-dom";
+import "../App.css";
 // import {MyContext} from "../MyContext";
 //context with router, componentDidMount
 // const models = require('./models/index');
@@ -28,8 +30,9 @@ class Forum extends Component {
     console.log(posts)
       return posts.map((post, index) => (
 
-        <div key={index}>
-         <h3>{post.category}</h3>
+        <div key={index} className='forum-container'>
+          <Link className="nav-link" to ="/createposts">{post.Title}</Link>
+          <div>{post.Author}</div>
         </div>
       
       )

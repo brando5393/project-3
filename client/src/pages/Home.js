@@ -9,12 +9,12 @@ class Home extends Component {
         content: category
     }
 
-    // componentDidMount(){
-    //     axios.get("/api/posts").then(data => {
-    //         console.log("api requested");
-    //         console.log(data);
-    //     })
-    // }
+    componentDidMount(){
+        axios.get("/api/posts").then(data => {
+            console.log("api requested");
+            console.log(data);
+        })
+    }
     //Context to state in class extended - read example article
     // //https://dev.to/evangunawan/react-context-the-easy-way-stateful-component-bh0
     // handleContext = ()=>{

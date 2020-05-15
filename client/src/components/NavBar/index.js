@@ -17,19 +17,19 @@ function NavBar(props) {
                 <a className="nav-link" data-category= "HTML" href="/posts/HTML">HTML</a>
             </li>
             <li className="nav-item">
-                    <a className="nav-link" data-category= "CSS" href="/posts">CSS</a>
+                    <a className="nav-link" data-category= "CSS" href="/posts/CSS">CSS</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" data-category= "Javascript" href="/posts">JavaScript</a>
+                <a className="nav-link" data-category= "Javascript" href="/posts/JavaScript">JavaScript</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" data-category = "Node" href="/posts">Node</a>
+                <a className="nav-link" data-category = "Node" href="/posts/Node">Node</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" data-category = "React" href="/posts">React</a>
+                <a className="nav-link" data-category = "React" href="/posts/React">React</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" data-category = "Databases" href="/posts">Databases</a>
+                <a className="nav-link" data-category = "Databases" href="/posts/Databases">Databases</a>
             </li>
             <li className="nav-item">
                 <Link className="nav-link" to ="/createposts">Create Post</Link>
