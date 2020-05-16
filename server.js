@@ -5,7 +5,9 @@ const PORT = process.env.PORT || 5000;
 require('dotenv').config();
 const mongoose = require("mongoose");
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/devforum";
+const bodyParser = require("body-parser")
 
+app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('./client/public'));

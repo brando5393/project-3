@@ -1,4 +1,4 @@
-import React, {Component, useContext} from "react";
+import React, {Component} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
 import "../App.css";
@@ -42,7 +42,7 @@ class Forum extends Component {
     //Rendering
     //QUERY TO DATABASE GRAB DATA ATTRIBUTE VALUE THEN TAKE RESPONSE AND APPEND INTO A CARD POST TITLE, AND ID
     render() {
-        const {} = this.context
+        // const {} = this.context
         return(
           <div className = "card">
             {this.displayPost(this.state.posts)};

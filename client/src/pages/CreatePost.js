@@ -42,8 +42,8 @@ class CreatePost extends Component {
     // static contextType = MyContext;
 
     render () {
-      console.log(this.context)
-      const {} = this.context
+      // console.log(this.context)
+      // const {} = this.context
       return (
         <div>
           <form onSubmit= {this.handleFormSubmit}>

@@ -20,23 +20,27 @@ debugger
             }
         });
     });
+    // Kitten.find().where('name', 'Harold').exec(/*callback*/);
+
 // Get all posts in a given category
-    router.get("/api/posts/:category", (req, res) =>{
-        console.log('in single post category')
-        models.Post.find((err, posts) =>{
-            console.log('posts '+posts)
+    router.get("/api/posts/:Category", (req, res) =>{
+        console.log(req.params.Category)
+        models.Post.find ({ Category: req.params.Category}, (err, posts) => {
             if(err){
                 throw err;
-            }else{
-                const postsJson = JSON.parse(posts)
-                console.log(postsJson)
-                // const filteredPosts = postsJson.filter(x => x.Category === 'CSS')
-                // console.log(filteredPosts)
-                //res.json(filteredPosts)
-                res.json(posts)
             }
-        });
-    });
+        else{
+            res.json(posts)
+        }
+        
+        // .then(data => res.json(data), console.log(data))
+        
+        // .catch(err => console.log(err))
+    }
+        )
+})
+         
+        
 
 // Get single post in category 
     router.get("/api/posts/:category/:id", (req, res) =>{
@@ -72,3 +76,19 @@ debugger
 
 
 module.exports = router;
+// const postsJson = JSON.parse(posts)
+            // const filteredPosts = postsJson.filter(x => x.Category === 'CSS')
+            // debugger
+            //     console.log(filteredPosts)
+            //     res.json(filteredPosts)
+            // debugger
+            // console.log(postsJson)
+            
+            // if (err){
+            //     throw err;
+            // }else{
+            //     // const postsJson = JSON.parse(posts)
+            //     // console.log(postsJson)
+            //     // const filteredPosts = postsJson.filter(x => x.Category === 'CSS')
+              
+            //     res.json(posts)
