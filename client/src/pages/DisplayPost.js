@@ -1,28 +1,30 @@
 import React, {Component} from "react";
 import axios from "axios";
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import "../App.css";
 // import {MyContext} from "../MyContext";
 //context with router, componentDidMount
 // const models = require('./models/index');
-class Forum extends Component {
+class DisplayPost extends Component {
+   
     //State, this.props.params.category
     state = {
-      Category: this.props.match.params.Category,
+      id: this.props.match.params._id,
       posts: []
         };
-
+    
   // topic = useContext(MyContext)
 
   componentDidMount= () => {
-    console.log(this.props.match.params.Category);
+    const id = this.props.match.params._id;
+    console.log(id);
     this.getPost();
             };
   getPost = () => {
-    axios.get('/api/posts/' + this.state.Category)
+    axios.get('/api/posts/' + this.state._id)
     .then(res => {
       const data = res.data
-      this.setState({ posts: data });
+      this.setState({ id: data });
     })
     .catch(err => this.setState({ error: err.message }));
   };
@@ -31,7 +33,9 @@ class Forum extends Component {
       return posts.map((post) => (
 
         <div key={post.id} className='forum-container'>
-          <Link className="nav-link" to ="/posts/:Category/:id">{post.Title} </Link>
+          <div>{post.Title}</div>
+            <div>{post.Author}</div>
+            <div>{post.Body}</div>
         </div>
       
       )
@@ -43,12 +47,10 @@ class Forum extends Component {
     render() {
         // const {} = this.context
         return(
-          <div className = "forum-display">
+          <div className = "container">
             {this.displayPost(this.state.posts)};
           </div>
               )
                 };
       };
-export default Forum;
-
-
+export default DisplayPost;

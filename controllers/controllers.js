@@ -20,7 +20,6 @@ debugger
             }
         });
     });
-    // Kitten.find().where('name', 'Harold').exec(/*callback*/);
 
 // Get all posts in a given category
     router.get("/api/posts/:Category", (req, res) =>{
@@ -31,31 +30,25 @@ debugger
             }
         else{
             res.json(posts)
-        }
-        
-        // .then(data => res.json(data), console.log(data))
-        
-        // .catch(err => console.log(err))
+            }
     }
         )
-})
-         
-        
+    })
 
 // Get single post in category 
-    router.get("/api/posts/:category/:id", (req, res) =>{
-        debugger 
-        console.log('test')
-        models.Post.find((err, posts) =>{
+    router.get("/api/posts/:Category/:id", (req, res) =>{
+        console.log(req.params.id)
+        models.Post.find ({ _id: req.params.id}, (err, posts) => {
             if(err){
                 throw err;
-            }else{
-                // res.redirect(200, '/posts');
-                // res.send('Hello World');
-                res.json(posts);
             }
-        });
-    });
+        else{
+            res.json(posts)
+            }
+    }
+        )
+    })
+
 
 // Create Post
     
@@ -76,19 +69,3 @@ debugger
 
 
 module.exports = router;
-// const postsJson = JSON.parse(posts)
-            // const filteredPosts = postsJson.filter(x => x.Category === 'CSS')
-            // debugger
-            //     console.log(filteredPosts)
-            //     res.json(filteredPosts)
-            // debugger
-            // console.log(postsJson)
-            
-            // if (err){
-            //     throw err;
-            // }else{
-            //     // const postsJson = JSON.parse(posts)
-            //     // console.log(postsJson)
-            //     // const filteredPosts = postsJson.filter(x => x.Category === 'CSS')
-              
-            //     res.json(posts)
