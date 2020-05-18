@@ -31,8 +31,9 @@ class Forum extends Component {
       return posts.map((post) => (
 
         <div key={post.id} className='forum-container'>
-          <Link className="nav-link" to ="/posts/:Category/:id">{post.Title} </Link>
+          <Link className="nav-link" to ="/posts/:Category/:id" params={post.id}>{post.Title}</Link>
         </div>
+
       
       )
       )

@@ -9,20 +9,34 @@ class DisplayPost extends Component {
    
     //State, this.props.params.category
     state = {
-      id: this.props.match.params._id,
+      Category: this.props.match.params.id,
+      id: this.props.match.params.id,
       posts: []
         };
     
   // topic = useContext(MyContext)
 
   componentDidMount= () => {
-    const id = this.props.match.params._id;
-    console.log(id);
-    this.getPost();
-            };
+    // const id = this.props.match.params.id;
+    // // this.setState((this.props.match.params.id));
+    // console.log(id);
+    // this.getPost();
+    //         };
+   const { match: { params } } = this.props;
+
+            axios.get(`/api/users/${params.id}`)
+              .then(({ data: id }) => {
+                console.log("id", id);
+          
+                this.setState({ id });
+              });
+              this.getPost()
+          }
   getPost = () => {
-    axios.get('/api/posts/' + this.state._id)
+    debugger
+    axios.get("/api/posts/"+ this.state.id)
     .then(res => {
+      console.log(res)
       const data = res.data
       this.setState({ id: data });
     })
