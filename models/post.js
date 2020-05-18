@@ -18,8 +18,28 @@ const PostSchema = new Schema({
     Body: {
         type: String, 
         required: true
-    }
+    },
+    //     Threadcomments:{
+    //         Comment: [CommentSchema]
+    //     }
+
 });
+
+
+// const CommentSchema = new Schema ({
+//     User: {
+//         type: String,
+//         required: true
+//     }, 
+//     Text: {
+//         type: String,
+//         required: true
+//     },
+//     Votes:{
+//         Type: Number, 
+//         required: false
+//     } 
+// });
 
 
 const Post = mongoose.model("Post", PostSchema);
