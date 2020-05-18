@@ -28,17 +28,18 @@ class Forum extends Component {
   };
   displayPost = (posts) => {
     console.log(posts)
+    debugger
       return posts.map((post) => (
-
+        
         <div key={post.id} className='forum-container'>
-          <Link className="nav-link" to ="/posts/:Category/:id" params={post.id}>{post.Title}</Link>
+          <Link className="nav-link" to ={`/posts/${post.Category}/${post._id}`}>{post.Title}</Link>
         </div>
 
       
       )
       )
-  };
-    // static contextType = MyContext
+      
+  };    // static contextType = MyContext
     //Rendering
     //QUERY TO DATABASE GRAB DATA ATTRIBUTE VALUE THEN TAKE RESPONSE AND APPEND INTO A CARD POST TITLE, AND ID
     render() {

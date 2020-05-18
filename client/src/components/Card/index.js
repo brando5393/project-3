@@ -8,8 +8,8 @@
     function Card(props) {
       return (
           <div>
-          <div className="col-lg-4">
-            <div className="card category-card" >
+          <div className="col-lg-4" >
+            <div className="card card-custom category-card" >
               <img src= {props.image} className="card-img-top" alt= {props.title} />
               <div className="card-body">
               <h5 className="card-title">{props.heading}</h5>
@@ -21,7 +21,7 @@
               </div>
               </div>
               </div>
-            </div>
+              </div>
           </div>
         // style={{width: "20rem"}}
         

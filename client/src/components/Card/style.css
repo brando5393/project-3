@@ -1,9 +1,12 @@
 .card {
-    width: 150px;
+    width: 100%;
+    margin: 30px;
+
 }
+
 .category-card {
 
-    width: 300px;
+    width: 283px;
     height: 400px;
     overflow: hidden;
 
@@ -21,7 +24,7 @@ img.center {
 .card-img-top {
 
     width: 50%;
-    margin-top: 15%;
+    margin-top: 10%;
     margin-right: 25%;
     margin-left: 25%;
     height: 35%;
