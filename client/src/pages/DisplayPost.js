@@ -16,7 +16,6 @@ class DisplayPost extends Component {
 
   componentDidMount= () => {
     const id = this.props.match.params.id;
-    // this.setState((id=this.props.match.params.id));
     console.log(id);
     this.getPost();
             };
@@ -33,7 +32,6 @@ class DisplayPost extends Component {
   };
   displayPost = (post) => {
     console.log(post)
-      // return posts.map((post) => (
 return (
         <div key={post.id} className='forum-container'>
           <div>{post.Title}</div>
@@ -44,8 +42,6 @@ return (
        )
   };
     // static contextType = MyContext
-    //Rendering
-    //QUERY TO DATABASE GRAB DATA ATTRIBUTE VALUE THEN TAKE RESPONSE AND APPEND INTO A CARD POST TITLE, AND ID
     render() {
         // const {} = this.context
         return(

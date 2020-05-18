@@ -4,8 +4,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const models = require('../models');
 
-// router.get("/", (req, res) => res.sendFile(path.join(__dirname, "../client/public/index.html")));
-debugger
+
     // pull all posts
     router.get("/api/posts", (req, res) =>{
         console.log('/api/posts')

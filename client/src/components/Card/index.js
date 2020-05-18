@@ -1,10 +1,7 @@
   import React from "react";
-  // import content from "../../jsonContent/homepage.json";
   import "./style.css";
   import {Link} from "react-router-dom";
    
-  // onClick={()=>props.onForumClick(props.heading)}
-
     function Card(props) {
       return (
           <div>
