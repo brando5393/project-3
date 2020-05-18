@@ -2,6 +2,8 @@
 
 body{
   background-image: linear-gradient(to bottom right, #2F4F4F, #778899, #808080, #696969);
+  height: 100%;
+  background-repeat: no-repeat;
 }
 
 .category-card{
@@ -42,4 +44,9 @@ body{
 img.center {
     display: block;
     margin: 0 auto;
+}
+
+.forum-container{
+  height: 90%; 
+  
 }
