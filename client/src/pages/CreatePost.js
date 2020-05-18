@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import axios from "axios";
+// import {MyContext} from "../MyContext";
 
 
 class CreatePost extends Component {
+
  
+
   state = {
       Title: "",
       Author: "",
@@ -36,8 +39,11 @@ class CreatePost extends Component {
       })
      
     }
+    // static contextType = MyContext;
 
     render () {
+      // console.log(this.context)
+      // const {} = this.context
       return (
         <div>
           <form onSubmit= {this.handleFormSubmit}>

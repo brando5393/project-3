@@ -8,10 +8,17 @@ const routes = require('./controllers/controllers');
 const PORT = process.env.PORT || 5000;
 const mongoose = require("mongoose");
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/devforum";
+
+const bodyParser = require("body-parser")
+
+app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+
 // const flash = require("express-flash");
 // const session = require("express-session");
 
-app.use(express.urlencoded({ extended: false }));
+//app.use(express.urlencoded({ extended: false }));
+
 app.use(express.json());
 app.use(express.static('./client/public'));
 app.use(routes);

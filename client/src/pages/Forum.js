@@ -1,25 +1,23 @@
 import React, {Component} from "react";
 import axios from "axios";
-//context with router, componentDidMount
-// const models = require('./models/index');
+import {Link} from "react-router-dom";
+import "../App.css";
+// import {MyContext} from "../MyContext";
+
 class Forum extends Component {
-    //State 
     state = {
-      category: "",
+      Category: this.props.match.params.Category,
       posts: []
-    }
+        };
+
+  // topic = useContext(MyContext)
 
   componentDidMount= () => {
+    console.log(this.props.match.params.Category);
     this.getPost();
-    // axios.get('/api/posts' + this.state.category)
-    // .then(res => {
-    //   const category = res.data
-    //   this.setState({ posts: data });
-    // })
-    // .catch(err => this.setState({ error: err.message }));
-};
+            };
   getPost = () => {
-    axios.get('/api/posts' + this.state.category)
+    axios.get('/api/posts/' + this.state.Category)
     .then(res => {
       const data = res.data
       this.setState({ posts: data });
@@ -27,28 +25,29 @@ class Forum extends Component {
     .catch(err => this.setState({ error: err.message }));
   };
   displayPost = (posts) => {
-      return posts.map((post, index) => (
-        <div key={index}>
-         <h3>{post.category}</h3>
-         </div>
+    console.log(posts)
+    
+      return posts.map((post) => (
+        
+        <div key={post.id} className='forum-container'>
+          <Link className="nav-link" to ={`/posts/${post.Category}/${post._id}`}>{post.Title}</Link>
+        </div>
+
       
       )
       )
-  };
-
-    //Rendering
-    //QUERY TO DATABASE GRAB DATA ATTRIBUTE VALUE THEN TAKE RESPONSE AND APPEND INTO A CARD POST TITLE, AND ID
+      
+  };    // static contextType = MyContext
+    
     render() {
-       
+        // const {} = this.context
         return(
-          <div className = "card">
-          {this.displayPost(this.state.posts)};
+          <div className = "forum-display">
+            {this.displayPost(this.state.posts)};
           </div>
-          
               )
-                }
-  }
-
+                };
+      };
 export default Forum;
 
 
