@@ -4,8 +4,8 @@ const path = require('path');
 const mongoose = require('mongoose');
 const models = require('../models');
 const bcrypt = require('bcrypt');
-const passport = require("passport");
-const initializePassport = require("./passportconfig.js");
+// const passport = require("passport");
+// const initializePassport = require("./passportconfig.js");
 
 initializePassport(passport, email => {
     return User.find(user => user.email === email)
@@ -59,28 +59,28 @@ initializePassport(passport, email => {
             res.json(error);
         })
     });
-    router.post("/register", async (err, req, res) =>{
-        try{
-            const hashedPassword = await bcrypt.hash(req.body.password, 10);
-            models.User.create({
-                name: req.body.name,
-                password: hashedPassword,
-                email: req.body.email
-            });
-            res.write("<h1>Thank you for Registering you will now be redirected to the homepage.</h1>");
-            setInterval(res.redirect(200, "/"), 5000)
-        }catch{
-            if(err) throw err
-            res.write("<h1>Sorry but your request could not be completed at this time. Please try again later, thank you.</h1>")
-            setInterval(res.redirect("/"), 5000)
-        };
-    });
+    // router.post("/register", async (err, req, res) =>{
+    //     try{
+    //         const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    //         models.User.create({
+    //             name: req.body.name,
+    //             password: hashedPassword,
+    //             email: req.body.email
+    //         });
+    //         res.write("<h1>Thank you for Registering you will now be redirected to the homepage.</h1>");
+    //         setInterval(res.redirect(200, "/"), 5000)
+    //     }catch{
+    //         if(err) throw err
+    //         res.write("<h1>Sorry but your request could not be completed at this time. Please try again later, thank you.</h1>")
+    //         setInterval(res.redirect("/"), 5000)
+    //     };
+    // });
 
-    router.get("/login", passport.authenticate("local", {
-        successRedirect: "/",
-        failureRedirect: "/login", 
-        failureFlash: true
-    }))
+    // router.get("/login", passport.authenticate("local", {
+    //     successRedirect: "/",
+    //     failureRedirect: "/login", 
+    //     failureFlash: true
+    // }))
     router.get('*', (req, res) =>{
         res.sendFile(path.join(__dirname, "../client/public/index.html"));
     })
