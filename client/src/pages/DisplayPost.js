@@ -41,12 +41,25 @@ return (
       
        )
   };
+
+  commentClick= (e) => {
+    e.preventDefault()
+    console.log("this has clicked")
+    
+
+  }
     // static contextType = MyContext
     render() {
         // const {} = this.context
         return(
+          <div>
           <div className = "container">
             {this.displayPost(this.state.post)};
+          </div>
+          <form>
+          <textarea id="comment" placeholder="Say something..."></textarea>
+          <button onClick={this.commentClick}>Post comment!</button>
+          </form>
           </div>
               )
                 };
