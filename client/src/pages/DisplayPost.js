@@ -35,8 +35,8 @@ class DisplayPost extends Component {
     console.log(post)
     return (
         <div key={post.id} className='forum-container'>
-          <div>{post.Title}</div>
-            <div>{post.Author}</div>
+          <div> <h6>Title: {post.Title}</h6></div>
+            <div><h6>Author: {post.Author} </h6></div>
             <div>{post.Body}</div>
         </div>
       
@@ -60,7 +60,7 @@ class DisplayPost extends Component {
           <div className = "container">
             {this.displayPost(this.state.post)}
           </div>
-          <div className = "comment container">
+          <div className = "comment-container">
             {this.displayComment(this.state.comment)}
           </div>
           <form>

@@ -40,3 +40,17 @@
 .forum-container .nav-link {
   color: black
 }
+
+#comment {
+
+  width: 80%;
+  height: 150px;
+}
+  
+
+
+#post-content {
+
+  width: 82%;
+
+}
