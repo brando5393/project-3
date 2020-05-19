@@ -29,7 +29,7 @@ function NavBar(props) {
                 <a className="nav-link" data-category = "React" href="/posts/React">React</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" data-category = "Databases" href="/posts/Databases">Databases</a>
+                <a className="nav-link" data-category = "Database" href="/posts/Database">Database</a>
             </li>
             <li className="nav-item">
                 <Link className="nav-link" to ="/createposts">Create Post</Link>

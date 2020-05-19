@@ -15,7 +15,7 @@
         "image": "images/javascript.jpg"
     },
     {
-        "heading": "Node JS",
+        "heading": "Node",
         "description": "An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a web browser. Node.js lets developers use JavaScript to write command line tools and pretty much have a great time.",
         "image": "images/node.jpg"
     },
@@ -25,7 +25,7 @@
         "image": "images/react.jpg"
     },
     {
-        "heading": "Databases",
+        "heading": "Database",
         "description": "A database is an organized collection of data, generally stored and accessed electronically from a computer system. Database systems are an essential tool in our society and can be found in libraries, schools and websites",
         "image": "images/database.jpg"
     }
