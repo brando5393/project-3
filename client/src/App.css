@@ -37,6 +37,37 @@
   }
 }
 
-.forum-container .nav-link {
-  color: black
+.post-link{
+   
+  color: black;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+#comment {
+
+  width: 80%;
+  height: 150px;
+}
+  
+
+
+#post-content {
+
+  width: 82%;
+
+}
+
+#comment-btn {
+
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+
+}
+
+h6 {
+
+  margin: 15px;
+
 }

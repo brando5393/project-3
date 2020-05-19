@@ -18,7 +18,7 @@ const bcrypt = require('bcrypt');
     router.get("/api/posts", (req, res) =>{
         console.log('/api/posts')
         models.Post.find((err, posts) =>{
-            debugger
+            
             if(err){
                 throw err;
             }else{
@@ -57,12 +57,11 @@ const bcrypt = require('bcrypt');
         )
     })
 
-
 // Create Post
     
     router.post("/api/posts", (req, res) =>{
         console.log(req.body);
-        debugger
+        
         models.Post.create(req.body).then(function(savedPost){
             return savedPost;
         }

@@ -9,7 +9,8 @@ class DisplayPost extends Component {
     state = {
       Category: this.props.match.params.Category,
       id: this.props.match.params.id,
-      post: []
+      post: [],
+      comments: []
         };
     
   // topic = useContext(MyContext)
@@ -28,11 +29,11 @@ class DisplayPost extends Component {
       const data = res.data
       this.setState({ post: data[0] || null });
     })
-    .catch(err => this.setState({ error: err.message }));
+    .catch(err => this.setState({ error: err.message }))
   };
   displayPost = (post) => {
     console.log(post)
-return (
+    return (
         <div key={post.id} className='forum-container'>
           <div> <h6>Title: {post.Title}</h6></div>
             <div><h6>Author: {post.Author} </h6></div>
@@ -41,7 +42,10 @@ return (
       
        )
   };
-
+  displayComment = (comment) =>{
+    console.log(comment)
+  }
+    
   commentClick= (e) => {
     e.preventDefault()
     console.log("this has clicked")
@@ -56,9 +60,12 @@ return (
           <div className = "container">
             {this.displayPost(this.state.post)}
           </div>
+          <div className = "comment-container">
+            {this.displayComment(this.state.comment)}
+          </div>
           <form>
           <textarea id="comment" placeholder="Say something..."></textarea>
-          <button onClick={this.commentClick}>Post comment!</button>
+          <button id="comment-btn" onClick={this.commentClick}>Post comment!</button>
           </form>
           </div>
               )
