@@ -29,7 +29,7 @@ class Forum extends Component {
     
       return posts.map((post) => (
         
-        <div key={post.id} className='forum-container'>
+        <div key={post.id} className='forum-container boxed'>
           <Link className="post-link" to ={`/posts/${post.Category}/${post._id}`}><h6>{post.Title}</h6></Link>
         </div>
 
