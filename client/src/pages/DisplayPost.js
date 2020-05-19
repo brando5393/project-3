@@ -65,7 +65,7 @@ class DisplayPost extends Component {
           </div>
           <form>
           <textarea id="comment" placeholder="Say something..."></textarea>
-          <button onClick={this.commentClick}>Post comment!</button>
+          <button id="comment-btn" onClick={this.commentClick}>Post comment!</button>
           </form>
           </div>
               )
