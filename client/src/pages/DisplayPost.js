@@ -9,7 +9,8 @@ class DisplayPost extends Component {
     state = {
       Category: this.props.match.params.Category,
       id: this.props.match.params.id,
-      post: []
+      post: [],
+      comments: []
         };
     
   // topic = useContext(MyContext)
@@ -28,7 +29,7 @@ class DisplayPost extends Component {
       const data = res.data
       this.setState({ post: data[0] || null });
     })
-    .catch(err => this.setState({ error: err.message }));
+    .catch(err => this.setState({ error: err.message }))
   };
   displayPost = (post) => {
     console.log(post)
@@ -41,7 +42,10 @@ return (
       
        )
   };
-
+  displayComment = (comment) =>{
+    console.log(comment)
+  }
+    
   commentClick= (e) => {
     e.preventDefault()
     console.log("this has clicked")
@@ -54,7 +58,10 @@ return (
         return(
           <div>
           <div className = "container">
-            {this.displayPost(this.state.post)};
+            {this.displayPost(this.state.post)}
+          </div>
+          <div className = "comment container">
+            {this.displayComment(this.state.comment)}
           </div>
           <form>
           <textarea id="comment" placeholder="Say something..."></textarea>

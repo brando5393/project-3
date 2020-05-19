@@ -43,7 +43,7 @@ class Forum extends Component {
         // const {} = this.context
         return(
           <div className = "forum-display">
-            {this.displayPost(this.state.posts)};
+            {this.displayPost(this.state.posts)}
           </div>
               )
                 };
