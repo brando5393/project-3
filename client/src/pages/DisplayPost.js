@@ -34,8 +34,8 @@ class DisplayPost extends Component {
     console.log(post)
 return (
         <div key={post.id} className='forum-container'>
-          <div>{post.Title}</div>
-            <div>{post.Author}</div>
+          <div> <h6>Title: {post.Title}</h6></div>
+            <div><h6>Author: {post.Author} </h6></div>
             <div>{post.Body}</div>
         </div>
       
@@ -54,7 +54,7 @@ return (
         return(
           <div>
           <div className = "container">
-            {this.displayPost(this.state.post)};
+            {this.displayPost(this.state.post)}
           </div>
           <form>
           <textarea id="comment" placeholder="Say something..."></textarea>

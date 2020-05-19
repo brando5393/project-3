@@ -39,7 +39,7 @@ class Home extends Component {
                     description = {item.description}
                     onForumClick = {this.handleFormSubmit}
                     />
-                ))};
+                ))}
             </div>
         );
     };
