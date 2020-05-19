@@ -33,7 +33,7 @@ class DisplayPost extends Component {
   };
   displayPost = (post) => {
     console.log(post)
-return (
+    return (
         <div key={post.id} className='forum-container'>
           <div>{post.Title}</div>
             <div>{post.Author}</div>
