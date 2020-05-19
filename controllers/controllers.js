@@ -93,7 +93,8 @@ const bcrypt = require('bcrypt');
     //     failureFlash: true
     // }))
     router.get('*', (req, res) =>{
-        res.sendFile(path.join(__dirname, "../client/public/index.html"));
+        console.log("here")
+        res.sendFile(path.join(__dirname, "../client/build/index.html"));
     })
 
 
