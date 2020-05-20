@@ -46,3 +46,12 @@ body{
       margin: 0 auto;
   }
   
+body{
+  background-image: linear-gradient(to bottom right, #2F4F4F, #778899, #808080, #696969);
+  height: 1500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative
+ 
+}

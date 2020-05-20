@@ -49,8 +49,6 @@ class DisplayPost extends Component {
   commentClick= (e) => {
     e.preventDefault()
     console.log("this has clicked")
-    
-
   }
     // static contextType = MyContext
     render() {
